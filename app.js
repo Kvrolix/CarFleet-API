@@ -18,4 +18,5 @@ app.use(express.static(`${__dirname}/public`)); // Middleware to serve static fi
 
 // carRouter;
 app.use('/api/v1/cars', carRouter); // Middleware to use the carRouter for all requests to /api/v1/cars
+
 module.exports = app; // Export the app object so it can be used in other files

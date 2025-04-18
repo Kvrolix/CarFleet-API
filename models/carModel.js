@@ -42,6 +42,7 @@ const carSchema = new mongoose.Schema(
 			type: String,
 			trim: true,
 			maxLength: [1000, 'A note must be less than or equal to 100 characters long'],
+			// it would be nice to have notes with every new patch about this car, e.g [date, broken mirror, dirty seat etc.]
 		},
 	},
 	{ toJSON: { virtuals: true }, toObject: { virtuals: true } } // Enable virtual getters and set toJSON and toObject options to true

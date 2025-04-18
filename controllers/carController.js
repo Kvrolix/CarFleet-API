@@ -36,3 +36,46 @@ exports.createCar = async (req, res) => {
 		res.status(400).json({ status: 'fail', message: err });
 	}
 };
+
+exports.getCar = async (req, res) => {
+	try {
+		// 1) Speak to DB with what exactly you want to perform
+		// I am getting the parameters from the URL that i am providing in postman
+		const car = await Car.findById(req.params.id);
+
+		res.status(201).json({
+			status: 'success',
+			data: { car },
+		});
+	} catch (err) {
+		res.status(404).json({
+			status: 'fail',
+			message: err.message,
+		});
+	}
+};
+
+exports.updateCar = async (req, res) => {
+	try {
+		const car = await Car.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+
+		res.status(201).json({ status: 'success', data: { car } });
+	} catch (err) {
+		res.status(404).json({
+			status: 'Failed when updating the record.',
+			message: err.message,
+		});
+	}
+};
+
+exports.deleteCar = async (req, res) => {
+	try {
+		const car = await Car.findByIdAndDelete(req.params.id);
+		res.status(201).json({ status: 'success', message: 'Car deleted successfully' });
+	} catch (err) {
+		res.status(404).json({
+			status: 'fail',
+			message: err.message,
+		});
+	}
+};
