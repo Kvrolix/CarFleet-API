@@ -1,0 +1,27 @@
+{
+	"name": "carfleet-api",
+	"version": "1.0.0",
+	"description": "API for cars, side project to practice more with express and mongoDB.",
+	"main": "app.js",
+	"scripts": {
+		"start": "nodemon server.js",
+		"start:prod": "SET NODE_ENV=production&&nodemon server.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Kvrolix/CarFleet-API.git"
+	},
+	"author": "Karol Lubicz-Gruzewski",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/Kvrolix/CarFleet-API/issues"
+	},
+	"homepage": "https://github.com/Kvrolix/CarFleet-API#readme",
+	"dependencies": {
+		"dotenv": "^16.5.0",
+		"express": "^5.1.0",
+		"mongodb": "^6.15.0",
+		"mongoose": "^8.13.2",
+		"morgan": "^1.10.0"
+	}
+}
